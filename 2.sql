@@ -9,4 +9,5 @@ with t as (
 select string_agg(value, '') from t
 where value between 'a' and 'z'
 or value in (' ', '!', '"', '(', ')', ',', '-', '.', ':', ';', '?', '''')
+-- ALTERNATIVE FILTER where value ~* '[a-zA-Z\s,.!]'
 ;
